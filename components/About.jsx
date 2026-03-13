@@ -1,15 +1,13 @@
-import Image from "next/image";
 import { assets, infoList, toolsData } from "@/assets/assets";
+import Image from "next/image";
 
 const About = () => {
   return (
     <div id="about" className="w-full px-[12%] py-10 scroll-mt-20">
-
       <h4 className="text-center mb-2 text-lg">Introduction</h4>
       <h2 className="text-center text-5xl">About me</h2>
 
       <div className="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
-
         <div className="w-64 sm:w-80 rounded-3xl">
           <Image
             src={assets.user_image}
@@ -19,15 +17,13 @@ const About = () => {
         </div>
 
         <div className="flex-1">
-
           <p className="mb-10 max-w-2xl">
-            I’m a frontend web developer specializing in building fast,
-            responsive, and user-focused web applications using JavaScript,
-            React, and Next.js...
+            ECE graduate with internship experience in industrial automation,
+            now fully focused on frontend development. I bring an engineer's
+            attention to reliability and detail to everything I build.
           </p>
 
           <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
-
             {infoList.map(({ icon, title, description }, index) => (
               <li
                 key={index}
@@ -38,13 +34,11 @@ const About = () => {
                 <p className="text-gray-600 text-sm">{description}</p>
               </li>
             ))}
-
           </ul>
 
           <h4 className="my-6 text-gray-700">Tools I use</h4>
 
           <ul className="flex items-center gap-3 sm:gap-5">
-
             {toolsData.map((tool, index) => (
               <li
                 key={index}
@@ -53,9 +47,7 @@ const About = () => {
                 <Image src={tool} alt="Tool icon" className="w-5 sm:w-7" />
               </li>
             ))}
-
           </ul>
-
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ const Header = () => {
       </div>
 
       <h3 className="flex items-end gap-2 text-xl md:text-2xl mb-3">
-        Hi! I am Abdus Salam
+        Hi! I am Abdus.
         <Image src={assets.hand_icon} alt="waving hand icon" className="w-6" />
       </h3>
 
@@ -23,8 +23,7 @@ const Header = () => {
       </h1>
 
       <p className="max-w-2xl mx-auto">
-        Frontend developer passionate about building fast and responsive web
-        applications using React and Next.js.
+        Frontend developer building production-grade apps with React and Next.js — currently shipping DealDrop.
       </p>
 
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">

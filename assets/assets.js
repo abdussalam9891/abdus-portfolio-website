@@ -6,8 +6,8 @@ import edu_icon_dark from './edu-icon-dark.png';
 import project_icon from './project-icon.png';
 import project_icon_dark from './project-icon-dark.png';
 import vscode from './vscode.png';
-import firebase from './firebase.png';
-import figma from './figma.png';
+import postman from './postman.png'
+
 import git from './git.png';
 import mongodb from './mongodb.png';
 import right_arrow_white from './right-arrow-white.png';
@@ -45,10 +45,10 @@ export const assets = {
     project_icon,
     project_icon_dark,
     vscode,
-    firebase,
-    figma,
+
     git,
     mongodb,
+    postman,
     right_arrow_white,
     logo,
     logo_dark,
@@ -78,25 +78,17 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
+        title: 'DealDrop',
+        description: 'Deal discovery web app built with Next.js, Tailwind CSS and Shadcn UI',
         bgImage: '/work-1.png',
+        link: 'https://github.com/abdussalam9891/dealdrop' // replace with actual URL
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
-        bgImage: '/work-2.png',
-    },
-    {
-        title: 'Photography site',
-        description: 'Web Design',
-        bgImage: '/work-3.png',
-    },
-    {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
-        bgImage: '/work-4.png',
-    },
+    title: 'Personal Portfolio',
+    description: 'Portfolio website built with Next.js and Tailwind CSS',
+    bgImage: '/work-2.png', // screenshot of your portfolio
+    link: 'https://abdus-portfolio-website.vercel.app/'
+}
 ]
 
 export const serviceData = [
@@ -129,5 +121,5 @@ export const infoList = [
 ];
 
 export const toolsData = [
-    assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
+    assets.vscode,  assets.mongodb, assets.git,assets.postman
 ];
