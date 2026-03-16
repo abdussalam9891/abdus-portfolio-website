@@ -77,19 +77,20 @@ export const assets = {
 };
 
 export const workData = [
-    {
-        title: 'DealDrop',
-        description: 'Deal discovery web app built with Next.js, Tailwind CSS and Shadcn UI',
-        bgImage: '/work-1.png',
-        link: 'https://github.com/abdussalam9891/dealdrop' // replace with actual URL
-    },
-    {
-    title: 'Personal Portfolio',
-    description: 'Portfolio website built with Next.js and Tailwind CSS',
-    bgImage: '/work-2.png', // screenshot of your portfolio
-    link: 'https://abdus-portfolio-website.vercel.app/'
-}
-]
+  {
+    title: "Dropwatch",
+    description: "Deal discovery platform",
+    bgImage: "/work-1.png",
+    liveLink: "https://get-dropwatch.vercel.app/",
+  },
+  {
+    title: "Portfolio",
+    description: "Personal portfolio site",
+    bgImage: "/work-2.png",
+    liveLink: "https://abdus-portfolio-website.vercel.app/",
+  },
+  // add more when ready
+];
 
 export const serviceData = [
     { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
