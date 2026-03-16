@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
 import About from "@/components/About";
@@ -11,36 +10,25 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
 
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") === "dark";
-    }
-    return false;
-  });
+  // Read localStorage once at init — no useEffect needed for this
+  const [isDarkMode, setIsDarkMode] = useState(() =>
+    typeof window !== "undefined" && localStorage.getItem("theme") === "dark"
+  );
 
+  // Single effect — only applies the class and saves preference
   useEffect(() => {
-
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-
+    document.documentElement.classList.toggle("dark", isDarkMode);
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
   }, [isDarkMode]);
 
   return (
     <div className="bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
-
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-
       <Header />
       <About />
       <Work />
       <Contact />
       <Footer />
-
     </div>
   );
 }

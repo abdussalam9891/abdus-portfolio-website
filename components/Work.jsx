@@ -1,4 +1,4 @@
-import { assets, workData } from "@/assets/assets";
+ import { assets, workData } from "@/assets/assets";
 import Image from "next/image";
 
 const Work = () => {
@@ -16,27 +16,34 @@ const Work = () => {
         {workData.map((project, index) => (
           <div
             key={index}
-            className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
-            style={{ backgroundImage: `url(${project.bgImage})` }}
+            className="group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-shadow duration-300"
           >
-            <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+            <div className="aspect-video overflow-hidden bg-gray-100">
+              <img
+                src={project.bgImage}
+                alt={project.title}
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            <div className="p-4 flex items-center justify-between bg-white dark:bg-gray-900">
               <div>
-                <h3 className="font-semibold">{project.title}</h3>
-                <p className="text-sm text-gray-700">{project.description}</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-gray-500 mt-0.5">
+                  {project.description}
+                </p>
               </div>
 
-              <a
-                href={project.liveLink}
+
+               <a href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
                 aria-label={`Open ${project.title}`}
+                className="ml-4 shrink-0 w-9 h-9 rounded-full border border-black dark:border-white flex items-center justify-center hover:bg-lime-300 hover:border-lime-300 transition duration-300"
               >
-                <Image
-                  src={assets.send_icon}
-                  alt="open project"
-                  className="w-5"
-                />
+                <Image src={assets.send_icon} alt="open project" className="w-4" />
               </a>
             </div>
           </div>
