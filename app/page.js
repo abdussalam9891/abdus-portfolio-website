@@ -9,13 +9,15 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  // Read localStorage once at init — no useEffect needed for this
-  const [isDarkMode, setIsDarkMode] = useState(() =>
-    typeof window !== "undefined" && localStorage.getItem("theme") === "dark"
-  );
+  useEffect(() => {
+    setMounted(true);
+    const stored = localStorage.getItem("theme");
+    if (stored === "dark") setIsDarkMode(true);
+  }, []);
 
-  // Single effect — only applies the class and saves preference
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
@@ -23,7 +25,7 @@ export default function Home() {
 
   return (
     <div className="bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
-      <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} mounted={mounted} />
       <Header />
       <About />
       <Work />
