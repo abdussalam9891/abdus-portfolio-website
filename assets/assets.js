@@ -84,12 +84,6 @@ export const workData = [
     liveLink: "https://get-dropwatch.vercel.app/",
   },
   {
-  title: "NextGen",
-  description: "Corporate business website",
-  bgImage: "/work-3.png",
-  liveLink: "https://next-gen-vercel.vercel.app/",
-},
-  {
     title: "Portfolio",
     description: "Personal portfolio site",
     bgImage: "/work-2.png",
